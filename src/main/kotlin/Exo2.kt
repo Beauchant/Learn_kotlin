@@ -1,5 +1,8 @@
+import java.util.Scanner
 fun main(){
     // Facture
+    val input = Scanner(System.`in`)
+
     val articles = mapOf("Pizza" to 250,
         "Cake" to 350, "Popcorn" to 50,
         "Fries" to 150, "Chips" to 50,
@@ -10,7 +13,7 @@ fun main(){
     //var missing: String = ""
     while (true){
         print("Enter an article (q to exit): ")
-        val article = readLine()?.capitalize()
+        val article = input.nextLine().capitalize()
         if(article == "Q"){
             break
         }
