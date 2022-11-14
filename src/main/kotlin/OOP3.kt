@@ -17,12 +17,40 @@ fun main(){
     myCar2.move()
     myCar2.stop()
 
-    println("Name: ${myCar2.name} O")
+    println("Name: ${myCar2.name}")
+    myCar2.ddr = 7
+    println(myCar2.ddr)
+
+    val myCar3 = CarClass("BMW", "X5", "Blue", 4)
+    val myCar4 = CarClass("BMW", "X5", "Blue", 4)
+    val myCar5 = CarClass("BMW", "X5", "Blue", 4)
+
+    println(CarClass.countObject)
+
 }
 
 // Basic OOP in Kotlin
 class CarClass(name: String, var model: String, var color: String, var doors: Int = 0){
+    // Count objects----------------
+    companion object{
+        var countObject = 0
+    }
+    init {
+        CarClass.countObject += 1
+    }
+    // Fin--------------------------
     var name: String = name.uppercase()
+        // Getter
+        get(){
+            return field
+        }
+        // Setter
+        set(value){
+            field = value
+        }
+
+    // The lateinit keyword allows you to initialize an object later
+    lateinit var ddr: Any
 
     // Secondary constructor
     constructor(name: String, color: String, doors: Int): this(name, "Missing", color, doors)
