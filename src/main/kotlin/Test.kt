@@ -1,8 +1,8 @@
 fun main(){
-    var p1 = Personne()
-    p1.name = "Boby"
-    p1.age = 17
+    val name1 = "Alex"
+    val name2 = "Alex"
 
-    p1.display()
+    println(name1 == name2)
+    println(name1 === name2)
 
 }
